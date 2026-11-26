@@ -2,6 +2,8 @@ import re
 
 import requests
 
+from configs.settings import BASE_URL
+
 
 
 '''
@@ -13,7 +15,7 @@ import requests
 }
 '''
 def test_public_status_endpoint():  
-    url ='http://localhost:3050/api/v1/public/status'
+    url = f"{BASE_URL}/api/v1/public/status"
     response = requests.get(url)
     response_body = response.json()
    
@@ -46,7 +48,7 @@ def test_public_status_endpoint():
 
 
 def test_public_stats_endpoint():
-        url = 'http://localhost:3050/api/v1/public/demo-stats'
+        url = f"{BASE_URL}/api/v1/public/demo-stats"
         response = requests.get(url)
         response_body = response.json()
 
